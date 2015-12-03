@@ -1,0 +1,46 @@
+!<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script>
+var js = '[{"name":"clause_1","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"relation","name":"a","terms":[]}, "rightFormula":{"type":"relation","name":"b","terms":[]} }}, {"name":"clause_2","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"a","terms":[]}}, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"b","terms":[]}} }}, {"name":"clause_3","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"relation","name":"a","terms":[]}, "rightFormula":{"type":"relation","name":"c","terms":[]} }, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"d","terms":[]}} }}, {"name":"clause_4","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"relation","name":"a","terms":[]}, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"c","terms":[]}} }, "rightFormula":{"type":"relation","name":"d","terms":[]} }}, {"name":"clause_5","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"a","terms":[]}}, "rightFormula":{"type":"relation","name":"c","terms":[]} }, "rightFormula":{"type":"relation","name":"d","terms":[]} }}, {"name":"clause_6","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"a","terms":[]}}, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"c","terms":[]}} }, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"d","terms":[]}} }}, {"name":"clause_7","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"relation","name":"b","terms":[]}, "rightFormula":{"type":"relation","name":"c","terms":[]} }, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"e","terms":[]}} }}, {"name":"clause_8","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"relation","name":"b","terms":[]}, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"c","terms":[]}} }, "rightFormula":{"type":"relation","name":"e","terms":[]} }}, {"name":"clause_9","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"b","terms":[]}}, "rightFormula":{"type":"relation","name":"c","terms":[]} }, "rightFormula":{"type":"relation","name":"e","terms":[]} }}, {"name":"clause_10","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"b","terms":[]}}, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"c","terms":[]}} }, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"e","terms":[]}} }}, {"name":"clause_11","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"relation","name":"d","terms":[]}, "rightFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"e","terms":[]}} }}, {"name":"clause_12","type":"negated_conjecture","formula":{"type":"binaryOperator", "op":"|", "leftFormula":{"type":"unaryOperator","op":"~","formula":{"type":"relation","name":"d","terms":[]}}, "rightFormula":{"type":"relation","name":"e","terms":[]} }}] '
+
+js = JSON.parse(js);
+//console.log("js - "+JSON.parse(js));
+for(var x=0;x<js.length;x++) {
+a = "";
+	
+	parsers(js[x].formula);
+	console.log(a);
+}
+function parsers(jsobject) {
+	if(jsobject.hasOwnProperty('op')) {
+		a = a + " "+jsobject.op
+	}
+	if(jsobject.hasOwnProperty('name')) {
+		//alert(jsobject.name);
+		s = jsobject.name;
+		s = s.charCodeAt(0)-96;
+		//console.log(s)
+
+		a = a + ""+s
+	}else {
+
+		if(jsobject.hasOwnProperty('leftFormula')) {
+			parsers(jsobject.leftFormula);
+		}
+		if(jsobject.hasOwnProperty('rightFormula')) {
+			parsers(jsobject.rightFormula);
+		}
+		if(jsobject.hasOwnProperty('formula')) {
+			parsers(jsobject.formula);
+		}
+	}
+}
+
+</script>
+</html>
