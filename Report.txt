@@ -1,0 +1,65 @@
+    Examining various parameters using the "College Scorecard Dataset" from US Dept of Education
+
+    We are trying to examine the dataset that is available from the US department of Education website, the dataset from the website contains data from 1996 - 2013 in the form of csv split according to the year. The excel files that we are trying to examine contains more than 1200 columns and some values are availabe for certain years whereas some are available for all years. Some of the columns are "INSTNM" which represents the institution name and "STABBR" & "CITY" which represents the state and city at which the institution is located in and so on...
+
+    Schools Data:
+
+    First we try to calculate the number of undergraduate universities based on states for every year starting from 1996 to 2013, We try to group the values based on the state and output the count of number of states that occured. Now with this grouped information we get number of universities based on each state for years between 1996 to 2013. It is represented with the variable "stateCount". The first column for this dataframe contains the state name and the rest of the column contains the values for each year from 1997 to 2013.
+
+    This is represented in the following graph
+
+    http://i.imgur.com/8l6aKos.png
+
+    In this graph the 'X' axis represents the states in different years and 'Y' axis represents the number of schools. You could see CA (California) having the most number of schools ranging from 635 to 805 in the span of 17 years followed by Texas and Florida. The state with the most number of school rise is California with 170 schools and the least number is Pennsylvania with a loss of 23 schools. Also in this graph we see a U shape on the graph as in there is a drop in the number of schools in between 1997 and 2013. But if we try to see the sum of schools we see the last 3 years have the most number of schools and the number is rising steadily. 
+
+    Year         Schools
+    Year-1997    6699
+	Year-1998    6480
+	Year-1999    6466
+	Year-2000    6478
+	Year-2001    6619
+	Year-2002    6546
+	Year-2003    6585
+	Year-2004    6660
+	Year-2005    6824
+	Year-2006    6848
+	Year-2007    6890
+	Year-2008    6975
+	Year-2009    7149
+	Year-2010    7414
+	Year-2011    7675
+	Year-2012    7793
+	Year-2013 	 7804
+
+
+	Undergraduate Enrollment:
+
+	Now we use the variable 'UGDS' which shows the enrollment of Undergraduate students in each university. Now we try to group this based on the state and sum the number of students based on the state. The result graph is shown here.
+
+	http://i.imgur.com/ntRBjXF.png
+
+	In this graph the X-Axis represents the States amd the Year and Y axis represents the number of student enrollments.	As you can see we dont have values for the year 2000 but from the graph we can see that California has the most number of enrollments followed by Texas, New York and Florida. Almost identical to the numbers of schools graph. When we try to compare the enrollment in the years 1997 and 2013 we see that the state WA has a drop of 7245 enrollments while CA has an additional 970101 enrollments followed by TX, FL and AZ.
+
+
+	now we try to group the values based on the year
+
+	Year             No:Of UG Enrollments
+	MERGED1997_PP    11179827
+	MERGED1998_PP    11193910
+	MERGED1999_PP    11563840
+	MERGED2000_PP         NaN
+	MERGED2001_PP    11918889
+	MERGED2002_PP    12632465
+	MERGED2003_PP    13093696
+	MERGED2004_PP    13386316
+	MERGED2005_PP    13587565
+	MERGED2006_PP    13797199
+	MERGED2007_PP    14074183
+	MERGED2008_PP    15333005
+	MERGED2009_PP    16492015
+	MERGED2010_PP    17213561
+	MERGED2011_PP    17211419
+	MERGED2012_PP    16846461
+	MERGED2013_PP    16539421
+ 
+	Based on the value that we get, we see that there has been a steady number of enrollment increase until 2011 and in the year 2008 we see increase in number of enrollments. The maximum enrollments was noted in the year 2010.
